@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template id="my-app">
+        您的问题： <input type="text" v-model="question">
+        <button @click="queryAnser">查询答案</button>
+    </template>
+    <script src="../js/vue.js"></script>
+    <div id="app"></div>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    question: "Hello World",
+                    answer: "",             
+                }
+            },
+
+            watch: {
+                // 我们的页面是可以对前端动态处理的，只有当需要对前端的值进行处理的时候采用watch
+                question(newValue, oldValue) {
+                    console.log("newValue", newValue);
+                    console.log("oldValue", oldValue);
+                }
+            },
+
+            methods: {
+                queryAnser() {
+                    console.log("您的问题${{this.question}}的答案是${{this.answer}}")
+                }
+            }
+        }
+
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+</html>

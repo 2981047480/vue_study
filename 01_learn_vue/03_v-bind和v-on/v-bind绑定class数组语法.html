@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="active.css">
+    <title>Document</title>
+</head>
+<body>
+    <template id="my-app">
+        <div :class="['abc','title']">hello</div>
+        <div :class="['abc','title',isActive ? 'active':'']">hello</div>
+        <div :class="['abc','title',{active: isActive}]">hello</div>
+        <button @click="toggle">toggle</button>
+    </template>
+    <script src="../js/vue.js"></script>
+    <h1 id="app"></h1>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    className: 'app',
+                    isActive: true,
+                }
+            },
+
+            methods: {
+                toggle() {
+                    this.isActive = !this.isActive
+                }
+            }
+        }
+
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+</html>

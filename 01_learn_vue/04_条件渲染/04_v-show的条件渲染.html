@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template id="my-app">
+        <h1 v-show="isShow">1111</h1>
+        <button @click="toggle">切换</button>
+    </template>
+    <script src="../js/vue.js"></script>
+    <h1 id="app"></h1>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    isShow: true
+                }
+            },
+
+            methods: {
+                toggle() {
+                    this.isShow = !this.isShow
+                }    
+            }
+        }
+
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+</html>

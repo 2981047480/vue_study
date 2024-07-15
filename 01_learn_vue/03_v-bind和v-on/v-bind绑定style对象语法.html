@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template id="my-app">
+        <!-- key可以不加单引号，value如果不加引号会被认为是变量，短横线也会有问题，需要带引号 -->
+        <div :style="{color: finalColor, 'font-size':'30px'}">hello</div>
+        <div :style="{color: finalColor, fontSize:'30px'}">hello</div>
+        <div :style="{color: finalColor, fontSize:finalFontSize+'px'}">hello</div>
+        <div :style="finalStyleObj">hello</div>
+        <div :style="getFinalStyleObj()">hello</div>
+    </template>
+    <script src="../js/vue.js"></script>
+    <h1 id="app"></h1>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    finalColor: "red",
+                    finalFontSize: 30,
+                    finalStyleObj: {
+                        color: "green",
+                        fontSize: 40
+                    }
+                }
+            },
+
+            methods: {
+                getFinalStyleObj() {
+                    return {
+                        color: "green",
+                        fontSize: 40
+                    }
+                }    
+            }
+        }
+
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+</html>

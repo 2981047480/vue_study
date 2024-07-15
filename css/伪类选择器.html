@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪类选择器</title>
+    <style type="text/css">
+        /* 一般用在超链接上 */
+        h1:hover{
+            color: red;
+        }
+        /* 一般不会一起用 */
+        /* 设置静止状态 */
+        a:link{
+            color: blue;
+        }
+        /* 设置触发状态 */
+        a:active{
+            color: green;
+        }
+        /* 设置鼠标悬浮状态 */
+        a:hover{
+            color: rosybrown;
+        }
+        /* 设置完成状态 */
+        a:visited{
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <span>
+        <h1>我是一个标题</h1>
+    </span>
+    <a href="../demo.html">点我跳转</a>
+</body>
+</html>

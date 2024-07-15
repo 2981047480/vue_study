@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位</title>
+    <style type="text/css">
+        #outer{
+            width: 500px;
+            height: 500px;
+            background-color: #bfa;
+            margin-left: 50px;
+            position: relative;
+        }
+        /* absolute是对于body来讲的位移 div01移动后 原位置得到了释放 后面的div02上去了 如果要让div01相对于outer发生位移 则需要在outer里面加一个定位 */
+        /* 有绝对定位的时候会一直往上找 直到找到body都没有定位的话 就相对于body做绝对定位 无论是哪一种 下一个div都会顶上去 */
+        #div01{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+        #div02{
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="div01">111</div>
+        <div id="div02">222</div>
+    </div>
+</body>
+</html>

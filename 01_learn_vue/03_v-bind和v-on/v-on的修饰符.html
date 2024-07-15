@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template id="my-app">
+        <div @click="divclick">
+            <!-- 还有很多修饰符，需要自己练习，详见md文档 -->
+            <!-- stop会阻止冒泡，通俗的讲会不执行外面的div中的操作 -->
+            <button @click.stop="btnclick">按钮1</button>
+            <button @click="btnclick">按钮2</button>
+        </div>
+        <input type="text" @keyup="onEnter"><br>
+        <input type="text" @keyup.enter="onEnter">
+    </template>
+    <script src="../js/vue.js"></script>
+    <h1 id="app"></h1>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    counter: 100
+                }
+            },
+
+            methods: {
+                divclick() {
+                    console.log('div click')
+                },
+
+                btnclick() {
+                    console.log('btn click')
+                },
+
+                onEnter() {
+                    console.log('entering')
+                }
+            }
+        }
+
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+</html>

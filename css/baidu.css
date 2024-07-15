@@ -1,0 +1,20 @@
+ul {
+    list-style-type: none;
+}
+li {
+    /* 向左浮动 */
+    float: left;
+    margin: 10px;
+}
+a {
+    text-decoration: none;
+    font-size: 13px;
+    color: black;
+}
+a:hover {
+    color: blue;
+}
+div {
+    position: absolute;
+    right: 200px;
+}

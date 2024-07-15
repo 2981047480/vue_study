@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template id="my-app">
+        <div>{{searchText}}</div>
+        <input type="text" :value="searchText" @input="changeSearchText">
+        <!-- 下面的写法是上面的语法糖 -->
+        <!-- <input type="text" v-model="searchText"> -->
+    </template>
+    <script src="../js/vue.js"></script>
+    <div id="app"></div>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    searchText: "hello world"
+                }
+            },
+
+            methods: {
+                changeSearchText(event) {
+                    this.searchText = event.target.value
+                }
+            }
+        }
+
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+</html>

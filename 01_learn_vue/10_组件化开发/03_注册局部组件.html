@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template id="my-app">
+        <component-a></component-a>
+    </template>
+    <template id="component-a">
+        <h2>component-a</h2>
+    </template>
+    <script src="../js/vue.js"></script>
+    <div id="app"></div>
+    <script>
+        const componentA= {
+            template: "#component-a"
+        }
+        const App = {
+            template: '#my-app',
+
+            components: {
+                componentA
+                // 原本应该写作 componentA: componentA
+            },
+
+            data() {
+                return {
+                    
+                }
+            },
+
+            methods: {
+                
+            }
+        }
+
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+</html>

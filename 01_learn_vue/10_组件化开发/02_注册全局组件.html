@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template id="component-a">
+        <h2>{{title}}</h2>
+        <p>{{desc}}</p>
+        <button @click="btnClick">点击按钮</button>
+    </template>
+    <template id="component-b">
+        <h2>{{message}}</h2>
+    </template>
+    <template id="my-app">
+        <component-a></component-a>
+        <component-b></component-b>
+    </template>
+    <script src="../js/vue.js"></script>
+    <div id="app"></div>
+    <script>
+        const App = {
+            template: '#my-app',
+        }
+
+        const app = Vue.createApp(App)
+        // 全局组件： 这个组件可以在其他任何组件模版中使用
+        app.component("component-a", {
+            template: "#component-a",
+            data() {
+                return {
+                    title: "哈哈哈哈",
+                    desc: "我是内容，呵呵呵呵呵", 
+                }
+            },
+            methods: {
+                btnClick() {
+                    console.log("btnClick")
+                }
+            }
+        })
+
+        app.component("component-b", {
+            template: "#component-b",
+            data() {
+                return {
+                    message: "我是component-b"
+                }
+            }
+        })
+        app.mount("#app")
+    </script>
+</body>
+</html>

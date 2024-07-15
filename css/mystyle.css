@@ -1,0 +1,12 @@
+h1 {
+    color: blue;
+    font-family: monospace;
+}
+/* 可以通俗的把div理解为一个塑料袋 包裹这个区域 一般叫块级元素 自带换行效果 */
+div{
+    border: 1px red solid;
+}
+/* span是内容多大就包多大 */
+span{
+    border: 1px blueviolet solid;
+}

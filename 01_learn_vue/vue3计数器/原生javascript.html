@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计数器</title>
+    <link type="text/css" href="../css/button.css" rel="stylesheet">
+</head>
+<body>
+        <h2 class="counter"></h2>
+        <button class="decrement">-1</button>
+        <button class="increment">+1</button>
+        <script>
+            // 1、获取所有的元素
+            const counterEl = document.querySelector('.counter');
+            const decrementEl = document.querySelector('.decrement');
+            const incrementEl = document.querySelector('.increment');
+
+            // 2、定义变量存储值
+            let counter=0;
+            counterEl.innerHTML = counter // 赋值 方便处理counter
+
+            // 3、监听按钮的点击
+            incrementEl.addEventListener('click',()=>{
+              counter += 1
+              counterEl.innerHTML = counter  
+            })
+            decrementEl.addEventListener('click',()=>{
+                counter -= 1
+                counterEl.innerHTML = counter
+            })
+        </script>
+</body>
+</html>

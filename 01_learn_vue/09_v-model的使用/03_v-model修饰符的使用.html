@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template id="my-app">
+        请输入<input type="text" v-model.lazy.number="text">
+        <br>
+        <span>text: {{text}}</span>
+        <br><button @click="getTextType">查看类型</button>
+
+        <br>请输入<input type="text" v-model.trim="text1">
+        <br><button @click="getText1">查看字符</button>
+        <span>text1: {{text1}}</span>
+    </template>
+    <script src="../js/vue.js"></script>
+    <div id="app"></div>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    text: null,
+                    text1: null,
+                }
+            },
+
+            methods: {
+                getTextType() {
+                    console.log(this.text, typeof this.text)
+                },
+                getText1() {
+                    console.log(this.text1)
+                }
+            }
+        }
+
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+</html>

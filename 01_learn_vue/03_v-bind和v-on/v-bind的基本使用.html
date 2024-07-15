@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baidi</title>
+</head>
+<body>
+    <template id="my-app">
+        <img v-bind:src="imgurl" alt="not found">
+        <a v-bind:href="link">百度一下</a>
+        <!-- 语法糖 这样也可以 -->
+        <a :href="link">百度一下</a>
+    </template>
+    <script src="../js/vue.js"></script>
+    <h1 id="app"></h1>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    imgurl: "../../img/icon.png",
+                    link: "https://www.baidu.com"
+                }
+            }
+        }
+
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+</html>

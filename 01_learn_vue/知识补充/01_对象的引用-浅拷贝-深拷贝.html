@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1、引用类型的对象赋值 -->
+    <script>
+        const info = {name: "zsh", age: 23}
+        const obj = info
+        info.name = "zhao"
+        console.log(obj.name);
+        // 这里就是引用类型赋值 两个指向的是同一个地址
+    </script>
+
+    <!-- 2、对象的浅拷贝 -->
+    <script>
+        const info = {name: "zsh", age: 23, address: {city: "北京"}}
+        // 把后面的值拷贝到前面的对象里面
+        // 浅拷贝 拷贝的是地址 比如修改下面的 就会改变obj和info
+        const obj1 = Object.assign({}, info)
+        info.address.city = "上海"
+    </script>
+
+    <!-- 3、对象的深拷贝 -->
+    <script>
+        const info = {name: "zsh", age: 23, address: {city: "北京"}}
+        const obj2 = JSON.parse(JSON.stringify(info))
+        info.address.city = "上海"
+        // 这里obj2不会改变，因为是深拷贝
+        console.log(obj2.address.city);
+    </script>
+</body>
+</html>

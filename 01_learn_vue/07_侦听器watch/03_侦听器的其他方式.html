@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template id="my-app">
+        <h2>{{info}}</h2>
+        <h2>{{info.name}}</h2>
+        <button @click="changeInfo">修改info</button>
+        <button @click="changeName">修改name</button>
+    </template>
+    <script src="../js/vue.js"></script>
+    <div id="app"></div>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    info: {
+                        name: "zsh",
+                        age: 23
+                    }
+                }
+            },
+
+            watch: {
+                info: {
+                    handler: function(newInfo, oldInfo) {
+                        console.log(newInfo, oldInfo)
+                    },
+                    deep: true, // 这个参数只有这种写法才能用
+                    immediate: true
+                }
+            },
+
+            methods: {
+              changeInfo() {
+                this.info={name: "abc"}
+              },
+              changeName() {
+                this.info.name="def"
+              },
+              created() {
+                // watch(要监听的源、监听的回调函数、额外的其他选项 比如deep、immediate)
+                const unwatch = this.$watch("info", function(newInfo, oldInfo) {
+                  console.log(newInfo, oldInfo)
+                }, {deep: true, immediate: true})
+                // 可以通过unwatch()取消监听
+              }
+            }
+        }
+
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template id="my-app">
+        <!-- 遍历数组 -->
+        <li v-for="(movie, index) in movies">{{index+1}}.{{movie}}</li>
+        <!-- 遍历对象 -->
+        <li v-for="item in info">{{item}}</li>
+        <!-- 遍历数组的同时访问数组中对象的值 -->
+        <li v-for="author in authors">{{author.name}}</li>
+        <!-- 遍历数字 -->
+        <li v-for="i in 10">{{i}}</li>
+    </template>
+    <script src="../js/vue.js"></script>
+    <h1 id="app"></h1>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    movies:[
+                        "星际穿越",
+                        "盗梦空间",
+                        "大话西游",
+                        "教父",
+                        "少年派"
+                    ],
+                    info: {
+                        name: "zsh",
+                        age: 18,
+                        gender: "男"
+                    },
+                    authors: [
+                        { name: '曹雪芹' },
+                        { name: '施耐庵' },
+                        { name: '罗贯中' },
+                        { name: '吴承恩' }
+                    ]
+                }
+            },
+
+            methods: {
+                increment() {
+                    this.counter++
+            }}
+        }
+
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+</html>

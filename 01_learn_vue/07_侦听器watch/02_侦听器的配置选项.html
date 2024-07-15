@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template id="my-app">
+        <h2>{{info}}</h2>
+        <h2>{{info.name}}</h2>
+        <button @click="changeInfo">修改info</button>
+        <button @click="changeName">修改name</button>
+    </template>
+    <script src="../js/vue.js"></script>
+    <div id="app"></div>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    info: {
+                        name: "zsh",
+                        age: 23
+                    }
+                }
+            },
+
+            watch: {
+                // info(newInfo, oldInfo) {
+                //     console.log(newInfo, oldInfo)
+                // }
+                // 深度侦听，上面是下面的语法糖
+                // 立即执行（一定会执行一次）,会默认用初始值执行一次
+                info: {
+                    handler: function(newInfo, oldInfo) {
+                        console.log(newInfo, oldInfo)
+                    },
+                    deep: true, // 这个参数只有这种写法才能用
+                    immediate: true
+                }
+            },
+
+            methods: {
+              changeInfo() {
+                this.info={name: "abc"}
+              },
+              changeName() {
+                this.info.name="def"
+              } 
+            }
+        }
+
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+</html>

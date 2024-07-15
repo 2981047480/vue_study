@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue计数器</title>
+    <link rel="stylesheet" href="../css/button.css" type="text/css">
+</head>
+<body>
+    <div id="app"></div>
+    <template id="count">
+        <div>
+            <h2>{{counter}}</h2>
+            <h2>{{message}}</h2>
+            <button @click="decrement">-1</button>    
+            <button @click="increment">+1</button>    
+        </div>
+    </template>
+    <script src="../js/vue.js"></script>
+    <script>
+        Vue.createApp({
+            template: `#count`,
+            data: function() {
+                return {
+                    message: "hello vue",
+                    counter: 100
+                }
+            },
+            methods: {
+                increment() {
+                    console.log("increment clicked")
+                    this.counter += 1
+                },
+                decrement() {
+                    console.log("decrement clicked")
+                    this.counter -= 1
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相对定位</title>
+</head>
+<body>
+    <!-- 相对定位： 相对元素自身应该在的位置定位 可以设置left、right、top、bottom 优先级左上>右下 -->
+    <!-- 进行相对定位后原来的位置被占用了 -->
+    <div style="width: 500px;height: 500px;background-color: pink;" >
+        <!-- z-index：设置优先级 -->
+        <div style="width: 100px;height: 100px; background-color: green; z-index: 15;"></div>
+        <div style="width: 100px;height: 100px; background-color: yellow;position: relative;bottom: 10px; left: 10px;z-index: 1;"></div>
+        <div style="width: 100px;height: 100px; background-color: purple;"></div>
+    </div>
+</body>
+</html>

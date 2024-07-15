@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template id="my-app">
+        <input type="text" v-model="message">
+        <h2>{{message}}</h2>
+        
+        <h2>{{title}}</h2>
+        <p>{{desc}}</p>
+    </template>
+    <script src="../js/vue.js"></script>
+    <div id="app"></div>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                   message: "Hello World",
+                   title: "哈哈哈哈",
+                   desc: "我是内容，呵呵呵呵呵", 
+                }
+            },
+
+            methods: {
+                
+            }
+        }
+
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本选择器</title>
+    <style>
+        /* 基本选择器 元素选择器 通过元素的名字定位 获取所有的这个标签 无论藏的多深 */
+        h1 {
+            color: red;
+        }
+        i {
+            color: blue;
+        }
+        /* 基本选择器 类选择器 */
+        /* 不同类型的标签使用相同的样式 */
+        .mycls {
+            color: green;
+        }
+        /* id选择器 */
+        /* 可以定位到唯一的元素 不同的标签可以使用相同的id 但一般不会这么做 */
+        #myid {
+            color: yellow;
+        }
+        /* 三种基本选择器的优先级别 */
+        /* id > class > 标签 */
+    </style>
+</head>
+<body>
+        <h1>我是<i>一个</i>标签</h1>
+        <h1>我是一个标签</h1>
+        <h1 class="mycls">我是一个标签</h1>
+        <h2>我是h2标题</h2>
+        <h2 class="mycls">我是h2标题</h2>
+        <h2 id="myid">我是h2标题</h2>
+</body>
+</html>

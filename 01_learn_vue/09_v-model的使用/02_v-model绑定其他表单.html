@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template id="my-app">
+        <!-- 1、选择框 -->
+        <label for="agree">
+            <input type="checkbox" v-model="isAgree">请同意协议
+        </label>
+        <br>
+        <span>agree: {{isAgree}}</span>
+        <!-- 2、多选框 -->
+        <br>
+        <label for="basketball">
+            <input id="basketball" type="checkbox" v-model="hobbies" value="basketball">篮球
+        </label>
+        <label for="football">
+            <input id="football" type="checkbox" v-model="hobbies" value="football">足球
+        </label>
+        <label for="basketball">
+            <input id="tennis" type="checkbox" v-model="hobbies" value="tennis">网球
+        </label>
+        <br><span>hobbies: {{hobbies}}</span>
+        <!-- 3、radio -->
+        <br>
+        <span>性别</span>
+        <label for="male">
+            <input id="male" type="radio" v-model="gender" value="male">男
+        </label>
+        <label for="female">
+            <input id="famale" type="radio" v-model="gender" value="female">女
+        </label>
+        <h2>gender: {{gender}}</h2>
+        <!-- 4、select -->
+        <span>喜欢的水果</span>
+        <select v-model="fruit" multiple size="2">
+            <option v-for="item in fruits" :value="item.name">{{item.cname}}</option>
+            <!-- <option value="orange">橘子</option>
+            <option value="apple">苹果</option>
+            <option value="pear">梨</option> -->
+        </select>
+        <h2>fruit: {{fruit}}</h2>
+    </template>
+    <script src="../js/vue.js"></script>
+    <div id="app"></div>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    isAgree: false,
+                    hobbies: [],
+                    gender: null,
+                    fruit: "未知",
+                    fruits: [
+                        {name: "apple", cname: "苹果"},
+                        {name: "orange", cname: "橘子"},
+                        {name: "pear", cname: "梨"}
+                    ]
+                }
+            },
+
+            methods: {
+                
+            }
+        }
+
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+</html>

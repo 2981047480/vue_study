@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关系选择器</title>
+    <style>
+        /* 所有span下面的h1标签都会发生改变 */
+        /* 后代选择器 */
+        span h1 {
+            color: red;
+        }
+        /* 子选择器 */
+        span > h1 {
+            color: aquamarine;            
+        }
+        div > h1 {
+            color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <div>这是一个标题</div>
+    <h1>这是标题</h1>
+    <h1>这是标题</h1>
+    <h1>这是标题</h1>
+    <div>
+        <span>
+            <h1>这是标题</h1>
+            <h1>这是标题</h1>
+            <h1>这是标题</h1>
+            <h1>这是标题</h1>
+            <div>
+                <h1>这是标题</h1>
+                <h1>这是标题</h1>
+                <h1>这是标题</h1>
+            </div>
+        </span>
+    </div>
+</body>
+</html>

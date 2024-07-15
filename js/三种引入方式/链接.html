@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="myjs.js"></script>
+    <script src="myjs2.js"></script>
+    <script url="URL链接"></script> <!-- 链接方式 -->
+    <!-- script标签一旦定义了外部js文件，就不能在里面再继续定义了，但是可以新开一个标签定义 -->
+    <script>
+        function func3(){
+            alert("hello")
+        }
+    </script>
+
+</head>
+<body>
+    <input type="button" value="test" onclick="func1()">
+    <input type="button" value="test2" onclick="func2()">
+    <input type="button" value="test2" onclick="func3()">
+</body>
+</html>

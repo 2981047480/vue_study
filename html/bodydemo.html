@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zephyr的网站</title>
+</head>
+<body>
+    <!-- 标题标签 -->
+    <!-- h7之后就属于无效标签了 浏览器不报错 以普通标签的方式展示出来 -->
+    <h1>test1</h1>
+    <h2>test2</h2>
+    <h3>test3</h3>
+    <h4>test4</h4>
+    <h5>test5</h5>
+    <h6>test6</h6>
+    <!-- 横线标签 -->
+    <hr>
+    <hr width="300px">
+    <hr width="300px" align="left"> <!-- left/center/right,默认居中 -->
+    <!-- 取浏览器的30% -->
+    <hr width="30%">
+    <!-- 段落标签 -->
+    <p>select epoch_to_timestamp($sf_enter_plan_time),epoch_to_timestamp($receive_time/1000),event,$sf_plan_id,time, user_id,distinct_id,$kafka_offset,epoch_to_timestamp($create_time) from events where user_id = -1828670490558309214 and event in ('$PlanMsgSendDone','members_register','$PlanConverted','$AppStart','acquire_coupon_detail','$SignUp') and date >= '2022-08-11' and date <= '2022-08-13' order by time limit 100/*SA(production)*/;</p>
+    <!-- 给段落加缩进 百度html实体字符 -->
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;select epoch_to_timestamp($sf_enter_plan_time),epoch_to_timestamp($receive_time/1000),event,$sf_plan_id,time, user_id,distinct_id,$kafka_offset,epoch_to_timestamp($create_time) from events where user_id = -1828670490558309214 and event in ('$PlanMsgSendDone','members_register','$PlanConverted','$AppStart','acquire_coupon_detail','$SignUp') and date >= '2022-08-11' and date <= '2022-08-13' order by time limit 100/*SA(production)*/;</p>
+    <!-- emsp一个就够了 -->
+    <p>&emsp;select epoch_to_timestamp($sf_enter_plan_time),epoch_to_timestamp($receive_time/1000),event,$sf_plan_id,time, user_id,distinct_id,$kafka_offset,epoch_to_timestamp($create_time) from events where user_id = -1828670490558309214 and event in ('$PlanMsgSendDone','members_register','$PlanConverted','$AppStart','acquire_coupon_detail','$SignUp') and date >= '2022-08-11' and date <= '2022-08-13' order by time limit 100/*SA(production)*/;</p>
+    <!-- 加粗倾斜下划线 -->
+    <b>加粗</b>
+    <i>倾斜</i>
+    <u>下划线</u>
+    <b><i><u>加粗倾斜下划线</u></i></b>
+    <!-- 预编译标签 会原原本本输出 -->
+    <pre>
+        package main
+    
+        import (
+            "fmt"
+        )
+    
+        func main() {
+            fmt.Println("Hello World!")
+        }
+    </pre>
+    <!-- 换行 -->
+    <p>select epoch_to_timestamp<br>($sf_enter_plan_time),</p>
+    <p><del>select epoch_to_timestamp($sf_enter_plan_time),</del></p>
+    <!-- 字体 -->
+    <font color="#cd82c1" size="2" face="宋体">curl -H "X-aws-ec2-metadata-token: $TOKEN" -v http://169.254.169.254/latest/meta-data/public-hostname</font>
+</body>
+</html>

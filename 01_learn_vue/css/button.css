@@ -1,0 +1,16 @@
+button {
+    background-color: rgb(184, 227, 255);
+    border: 2px solid rgb(12, 100, 175);
+    font-size: 20px;
+    border-radius: 5px;
+}
+button:hover{
+    background-color: rgb(12, 100, 175);
+    color: white;
+    box-shadow: 0cap;
+}
+button:active {
+    background-color: rgb(12, 100, 175);
+    box-shadow: 0 1px #a37a7a;
+    transform: translateY(1px);
+}

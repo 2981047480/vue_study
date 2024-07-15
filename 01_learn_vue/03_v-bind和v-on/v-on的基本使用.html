@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .area {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <template id="my-app">
+        <button v-on:click="btn1Click">button1</button>
+        <button @mousemove="mousemove">button2</button>
+        <button @click="counter++">{{counter}}</button>
+        <!-- 绑定一个对象 -->
+        <div class="area" v-on="{click: btn1Click, mousemove: mousemove}"></div>
+        <!-- 这个也有语法糖 -->
+        <div class="area" @="{click: btn1Click, mousemove: mousemove}"></div>
+    </template>
+    <script src="../js/vue.js"></script>
+    <h1 id="app"></h1>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    counter: 100
+                }
+            },
+
+            methods: {
+                btn1Click() {
+                    console.log("btn1Click");
+                },
+
+                mousemove() {
+                    console.log("mousemove");
+                }
+            }
+        }
+
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+</html>
